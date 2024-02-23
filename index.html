@@ -2,24 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Ragul J - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
 
   <body>
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
       <div class="logo">Ragul J</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
+
+    <!-- Hamburger Navigation -->
     <nav id="hamburger-nav">
       <div class="logo">Ragul J</div>
       <div class="hamburger-menu">
@@ -29,33 +34,118 @@
           <span></span>
         </div>
         <div class="menu-links">
-          
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
+
     <section id="profile">
-      <div class="section_pic-container">
-        <img src="./assets/profilepic.png" alt="profile photo">
+      <div class="section__pic-container">
+        <img src="./assets/profilepic.png" alt="Profile Picture" />
       </div>
-      <div class="section_text">
-        <p class="section_text_p1">Hello, I'm</p>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Ragul J</h1>
-        <p class="section_text_p2">Fullstack Developer</p>
+        <p class="section__text__p2">Full Stack Developer</p>
         <div class="btn-container">
-          <button class="btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
-          <button class="btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('mailto:j.raguljayaraj315@gmail.com')"
+          >
+            Contact Me
+          </button>
         </div>
-        <div id="social-container">
-          <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" onclick="location.href='https://linkedin.com/in/ragul315/'">
-          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/ragul315'">
+        <div id="socials-container">
+          <a href="https://www.linkedin.com/in/ragul0420"
+            ><img
+              src="./assets/linkedin.png"
+              alt="LinkedIn Profile"
+              class="icon"
+          /></a>
+          <a href="https://github.com/ragul315"
+            ><img src="./assets/github.png" alt="GitHub Profile" class="icon"
+          /></a>
         </div>
       </div>
     </section>
-    <script src="script.js"></script>
+
+    <section id="about">
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow Icon"
+        class="icon arrow"
+        onclick="location.href='#experience'"
+      />
+    </section>
+
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-cont">
+        <a href="https://www.akshayaacademy.com" class="details-link">
+          <div class="experience-container">
+            <img src="./assets/onwordslogo.jpg" alt="" class="complogo" />
+
+            <h2>Embedded Software Developer</h2>
+            <p>
+              Onwords, Pollachi<br />Jun 2023 - Jul 2023<br />Worked in R&D,
+              programming microcontrollers, MQTT.
+            </p>
+          </div>
+        </a>
+        <a href="https://www.akshayaacademy.com" class="details-link">
+          <div class="experience-container">
+            <img src="./assets/twilearnlogo.jpg" alt="" class="complogo" />
+            <h2>Web Developer</h2>
+            <p>
+              TwiLearn, Virtual Mode<br />Mar 2023 - Apr 2023<br />Utilized
+              HTML, CSS, JS, Firebase for web development.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="education">
+      <h1 class="title">Education</h1>
+      <div class="education-cont">
+        <a href="https://drmcet.ac.in" class="details-link">
+          <div class="details-container">
+            <h3>B.E. Computer Science and Engineering</h3>
+            <p>
+              Dr. Mahalingam College of Engineering and Technology, Pollachi<br />Nov
+              2021 - Jun 2025 (Expected)<br />GPA: 7.9 (Till 5th sem)
+            </p>
+          </div>
+        </a>
+        <a href="https://www.akshayaacademy.com" class="details-link">
+          <div class="details-container">
+            <h3>Higher Secondary School (HSC) - PCM - CS (CBSE)</h3>
+            <p>
+              Akshaya Academy, Oddanchatram<br />2019 – 2021<br />Score: 68%
+            </p>
+          </div>
+        </a>
+        <a href="https://www.akshayaacademy.com" class="details-link">
+          <div class="details-container">
+            <h3>High School Leaving (HSLC) - (CBSE)</h3>
+            <p>
+              Akshaya Public School, Palani<br />2007 – 2019<br />Score: 64%
+            </p>
+          </div>
+        </a>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow Icon"
+        class="icon arrow"
+        onclick="location.href='#projects'"
+      />
+    </section>
+    
   </body>
 </html>
