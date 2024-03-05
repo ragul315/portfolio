@@ -7,6 +7,7 @@
     <title>Ragul J - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="loading.css">
   </head>
 
   <body>
@@ -44,46 +45,65 @@
     </nav>
 
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profilepic.png" alt="Profile Picture" />
+      <div class="section_pic-container">
+        <img src="./assets/profilepic.png" alt="profile photo">
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+      <div class="section_text">
+        <p class="section_text_p1">Hello, I'm</p>
         <h1 class="title">Ragul J</h1>
-        <p class="section__text__p2">Full Stack Developer</p>
+        <p class="section_text_p2">Fullstack Developer</p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('mailto:j.raguljayaraj315@gmail.com')"
-          >
-            Contact Me
-          </button>
+          <button class="btn-color-2" onclick="window.open('./assets/resume.pdf')">Download CV</button>
+          <button class="btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
         </div>
-        <div id="socials-container">
-          <a href="https://www.linkedin.com/in/ragul0420"
-            ><img
-              src="./assets/linkedin.png"
-              alt="LinkedIn Profile"
-              class="icon"
-          /></a>
-          <a href="https://github.com/ragul315"
-            ><img src="./assets/github.png" alt="GitHub Profile" class="icon"
-          /></a>
+        <div id="social-container">
+          <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" onclick="location.href='https://linkedin.com/in/ragul315/'">
+          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/ragul315'">
         </div>
       </div>
     </section>
 
     <section id="about">
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow Icon"
-        class="icon arrow"
-        onclick="location.href='#experience'"
-      />
+      <h1 class="title">About Me</h1>
+      <div class="about-content">
+        <div>
+          <h2>Summary</h2>
+          <p>
+            I am a passionate and creative Full Stack Developer with a strong
+            foundation in computer science and engineering. I love tackling
+            challenging problems and building innovative solutions. With a keen
+            eye for detail and a knack for problem-solving, I strive to deliver
+            high-quality software products that exceed expectations.
+          </p>
+        </div>
+
+        <h2>Skills</h2>
+        <div class="card-wrapper">
+          <div class="card">
+            <h3>Front-end</h3>
+            <div class="skill">HTML, CSS, JS, Node.js</div>
+          </div>
+          <div class="card">
+            <h3>Back-end</h3>
+            <div class="skill">Java, JDBC, Servlet, JSP</div>
+          </div>
+          <div class="card">
+            <h3>Database</h3>
+            <div class="skill">MySQL, MongoDB</div>
+          </div>
+          <div class="card">
+            <h3>Other</h3>
+            <div class="skill">Python, Git, VS Code</div>
+          </div>
+          <div class="card">
+            <h3>Soft Skills</h3>
+            <div class="skill">Leadership, Adaptability, Quick Learner</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
       <div class="experience-cont">
         <a href="https://www.akshayaacademy.com" class="details-link">
@@ -139,13 +159,157 @@
           </div>
         </a>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow Icon"
-        class="icon arrow"
-        onclick="location.href='#projects'"
-      />
     </section>
-    
+    <section id="projects">
+      <h1 class="title">Projects</h1>
+      <div class="project-container">
+
+        <div class="project">
+          <img
+          src="voice_assistant_image.jpg"
+          alt="Voice Assistant"
+          class="project-image"
+        />
+        <div class="project-details">
+          <h2>Voice Assistant</h2>
+          <p>
+            Technologies: NLTK, PyAutoGUI, TensorFlow, SpeechRecognition, Gtts
+          </p>
+          <p>
+            Description: Developed a voice-controlled assistant using various
+            libraries for natural language processing, automation, and speech
+            synthesis.
+          </p>
+          <a href="https://github.com/your-username/voice-assistant" class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+      
+      <div class="project">
+        <img
+        src="invoice_generator_image.jpg"
+        alt="Invoice Generator"
+        class="project-image"
+        />
+        <div class="project-details">
+          <h2>Invoice Generator</h2>
+          <p>Technologies: Python, MySQL, Tkinter</p>
+          <p>
+            Description: Created a Python application with a graphical user
+            interface for generating invoices.
+          </p>
+          <a
+          href="https://github.com/your-username/invoice-generator"
+          class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+      
+      <div class="project">
+        <img
+        src="exam_registration_system_image.jpg"
+        alt="Exam Registration System"
+        class="project-image"
+        />
+        <div class="project-details">
+          <h2>Exam Registration System</h2>
+          <p>Technologies: Java, MySQL, JDBC</p>
+          <p>
+            Description: Developed a Java-based system for managing exam
+            registrations using a relational database.
+          </p>
+          <a
+          href="https://github.com/your-username/exam-registration-system"
+          class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+
+      <div class="project">
+        <img
+        src="water_tank_automation_image.jpg"
+        alt="Water Tank Automation"
+        class="project-image"
+        />
+        <div class="project-details">
+          <h2>Water Tank Automation</h2>
+          <p>Technologies: ESP32, Express-IF, MQTT, Arduino</p>
+          <p>
+            Description: Designed an automation system using ESP32
+            microcontrollers, MQTT protocol, and Arduino for water tanks.
+          </p>
+          <a
+          href="https://github.com/your-username/water-tank-automation"
+          class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+      
+      <div class="project">
+        <img
+        src="fan_speed_controller_image.jpg"
+        alt="Automatic Fan Speed Controller with Temperature"
+        class="project-image"
+        />
+        <div class="project-details">
+          <h2>Automatic Fan Speed Controller with Temperature</h2>
+          <p>Technologies: ESP8266, MIT App Inventor, Firebase</p>
+          <p>
+            Description: Created a system using ESP8266 microcontrollers, MIT
+            App Inventor for mobile app development, and Firebase for real-time
+            data monitoring.
+          </p>
+          <a
+          href="https://github.com/your-username/fan-speed-controller"
+          class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+      
+      <div class="project">
+        <img
+        src="hall_booking_automation_image.jpg"
+          alt="Hall Booking and Automation System"
+          class="project-image"
+        />
+        <div class="project-details">
+          <h2>Hall Booking and Automation System</h2>
+          <p>Technologies: ESP8266, Arduino, JavaScript, HTML, CSS, Firebase</p>
+          <p>
+            Description: Developed a system for booking and automating halls
+            using ESP8266 and Arduino for hardware control, and Firebase for
+            backend services.
+          </p>
+          <a
+          href="https://github.com/your-username/hall-booking-automation"
+          class="btn"
+          >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer-content">
+          <p>&copy; 2024. All rights reserved.</p>
+          <div class="social-links">
+              <a href="https://wa.me/919600765169"><img src="./assets/004-whatsapp.png" alt="WhatsApp"></a>
+              <a href="https://www.instagram.com/ragul_315/"><img src="./assets/005-instagram.png" alt="Instagram"></a>
+              <a href="mailto:j.ragul315@gmail.com"><img src="./assets/002-email.png" alt="Email"></a>
+              <a href="https://www.linkedin.com/in/ragul315/"><img src="./assets/001-linkedin.png" alt="LinkedIn"></a>
+              <a href="https://github.com/ragul315"><img src="./assets/003-github.png" alt="GitHub"></a>
+          </div>
+      </div>
+  </section>
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+</div>
+<script src="script.js"></script>
   </body>
 </html>
