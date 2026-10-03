@@ -76,6 +76,7 @@ window.PORTFOLIO = {
   contact: {
     heading: "Have a role or a project in mind?",
     text: "Email is the quickest way to reach me. I usually reply within a day or two.",
+    phone: "9600765169",
   },
 
   experience: [
