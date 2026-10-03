@@ -23,7 +23,8 @@ window.PORTFOLIO = {
       highlights: [
         "Built responsible-AI (AI governance) guardrails for LLM pipelines: real-time PII protection with Microsoft Presidio, and a content-moderation layer designed with the Factory pattern so new content-safety providers plug in without changing callers. It currently runs on Azure AI Content Safety.",
         "Currently building a document processing pipeline that uses Docling to parse large files and vectorize them for retrieval.",
-        "Engineered distributed workflow orchestration on Temporal with customized retry mechanisms and circuit breakers, giving fault-tolerant, deterministic execution for async backend processes and AI agents.",
+        "Engineered distributed workflow orchestration on Temporal with customized retry mechanisms, giving fault-tolerant, deterministic execution for async backend processes and AI agents.",
+        "Implemented circuit breaker and retry mechanisms to improve fault tolerance, protecting workflows from downstream service failures.",
         "Built deterministic LLM response structuring and validation layers with Pydantic, turning unpredictable model output into type-safe data.",
         "Refactored a legacy data layer from hardcoded SQL to a modular, multi-database SQLAlchemy ORM architecture, removing MSSQL vendor lock-in.",
         "Implemented Redis caching for high-frequency reads such as system prompts, cutting database cost and speeding up prompt retrieval.",
