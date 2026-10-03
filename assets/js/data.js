@@ -22,7 +22,6 @@ window.PORTFOLIO = {
       logo: null,
       highlights: [
         "Built responsible-AI (AI governance) guardrails for LLM pipelines: real-time PII protection with Microsoft Presidio, and a content-moderation layer designed with the Factory pattern so new content-safety providers plug in without changing callers. It currently runs on Azure AI Content Safety.",
-        "Currently building a document processing pipeline that uses Docling to parse large files and vectorize them for retrieval.",
         "Engineered distributed workflow orchestration on Temporal with customized retry mechanisms, giving fault-tolerant, deterministic execution for async backend processes and AI agents.",
         "Implemented circuit breaker and retry mechanisms to improve fault tolerance, protecting workflows from downstream service failures.",
         "Built deterministic LLM response structuring and validation layers with Pydantic, turning unpredictable model output into type-safe data.",
@@ -30,7 +29,7 @@ window.PORTFOLIO = {
         "Implemented Redis caching for high-frequency reads such as system prompts, cutting database cost and speeding up prompt retrieval.",
         "Diagnosed and resolved high-priority production bottlenecks through debugging and performance tuning.",
       ],
-      tags: ["Python", "FastAPI", "Temporal", "Pydantic", "Presidio", "Azure AI Content Safety", "Docling", "SQLAlchemy", "Redis", "MCP"],
+      tags: ["Python", "FastAPI", "Temporal", "Pydantic", "Presidio", "Azure AI Content Safety", "SQLAlchemy", "Redis", "MCP"],
     },
     {
       company: "Onwords Smart Solution",
@@ -147,7 +146,7 @@ window.PORTFOLIO = {
   ],
 
   skills: [
-    { group: "GenAI & Agents", items: ["AI Agents", "Model Context Protocol (MCP)", "LLM response validation", "RAG", "Docling", "Gemini API"] },
+    { group: "GenAI & Agents", items: ["AI Agents", "Model Context Protocol (MCP)", "LLM response validation", "RAG", "Gemini API"] },
     { group: "Responsible AI", items: ["AI governance", "PII protection (Presidio)", "Content moderation", "Azure AI Content Safety", "Factory pattern"] },
     { group: "Backend", items: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "REST APIs", "Temporal", "Spring Boot"] },
     { group: "Data", items: ["PostgreSQL", "MSSQL", "MongoDB", "MySQL", "Redis"] },

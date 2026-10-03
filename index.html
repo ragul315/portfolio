@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ragul Jayaraj | GenAI Backend Engineer</title>
-  <meta name="description" content="Ragul Jayaraj is a GenAI backend engineer at UST working on responsible-AI guardrails, AI agents and document pipelines with FastAPI, Temporal, Presidio and Docling.">
+  <meta name="description" content="Ragul Jayaraj is a GenAI backend engineer at UST working on responsible-AI guardrails and AI agents with FastAPI, Temporal, Presidio and Redis.">
   <meta name="author" content="Ragul Jayaraj">
   <meta name="theme-color" content="#030712">
   <meta name="color-scheme" content="dark">
@@ -120,8 +120,7 @@
             I'm a software engineer at UST, working on the backend side of generative AI. A big part of my work is
             responsible AI: PII protection with Microsoft Presidio, and a content-moderation layer built so different
             content-safety providers can be swapped in (it runs on Azure AI Content Safety today). I also build
-            task-oriented AI agents on Temporal, and right now I'm working on a pipeline that uses Docling to turn
-            large documents into vectors for retrieval.
+            task-oriented AI agents orchestrated with Temporal.
           </p>
           <p>
             I spend a lot of time on the failure cases: retries that don't turn into retry storms, circuit breakers,
@@ -131,7 +130,7 @@
         </div>
         <dl class="card facts reveal">
           <div><dt>Role</dt><dd>Software Engineer, UST</dd></div>
-          <div><dt>Works on</dt><dd>Responsible AI, AI agents, document pipelines</dd></div>
+          <div><dt>Works on</dt><dd>Responsible AI, AI agents, backend reliability</dd></div>
           <div><dt>Main stack</dt><dd>Python, FastAPI, Temporal, SQLAlchemy, Redis</dd></div>
           <div><dt>Studied</dt><dd>B.E. Computer Science, Dr. Mahalingam College</dd></div>
           <div><dt>Based in</dt><dd>Tamil Nadu, India</dd></div>
@@ -142,7 +141,7 @@
     <section class="section container" id="architecture">
       <p class="label mono">Architecture</p>
       <h2 class="section-title">How the systems I build fit together</h2>
-      <p class="section-sub">A typical agent backend I work on, plus the document pipeline I'm building now. Select a component to see its role.</p>
+      <p class="section-sub">A typical agent backend I work on. Select a component to see its role.</p>
 
       <div class="arch-scroll reveal">
         <div class="arch" id="arch">
@@ -154,9 +153,6 @@
             </defs>
             <rect class="lane" x="228" y="148" width="194" height="118" rx="14"/>
             <text class="lane-label" x="240" y="140">Governance</text>
-            <path class="edge" style="--c:#94a3b8" d="M190 70H240" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#93c5fd" d="M300 70H350" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#a78bfa" d="M410 70H610" marker-end="url(#arrow)"/>
             <path class="edge" style="--c:#c084fc" d="M670 70H760" marker-end="url(#arrow)"/>
             <path class="edge" style="--c:#e879f9" d="M820 70H890" marker-end="url(#arrow)"/>
             <path class="edge" style="--c:#60a5fa" d="M80 200H130" marker-end="url(#arrow)"/>
@@ -167,22 +163,9 @@
             <path class="edge" style="--c:#818cf8" d="M538 200H610" marker-end="url(#arrow)"/>
             <path class="edge" style="--c:#818cf8" d="M518 232Q540 322 610 328" marker-end="url(#arrow)"/>
             <path class="edge" style="--c:#f87171" d="M670 330H760" marker-end="url(#arrow)"/>
-            <text class="edge-label" x="510" y="60" text-anchor="middle">retrieval</text>
           </svg>
 
-          <button class="node" style="--x:160;--y:70;--c:#94a3b8" type="button" data-detail="Large documents come in for processing, the pipeline I'm currently building.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></span>
-            <span class="node-label">Large files</span>
-          </button>
-          <button class="node" style="--x:270;--y:70;--c:#93c5fd" type="button" data-detail="Docling parses large files and splits them into chunks ready for embedding.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/></svg></span>
-            <span class="node-label">Docling</span>
-          </button>
-          <button class="node" style="--x:380;--y:70;--c:#a78bfa" type="button" data-detail="Chunks are embedded and stored as vectors so the agent can retrieve relevant context.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></span>
-            <span class="node-label">Vector store</span>
-          </button>
-          <button class="node" style="--x:640;--y:70;--c:#c084fc" type="button" data-detail="Task-oriented AI agents that plan the work and pull context from the vector store.">
+          <button class="node" style="--x:640;--y:70;--c:#c084fc" type="button" data-detail="Task-oriented AI agents that plan the work and decide which steps and tools to run.">
             <span class="node-box"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg></span>
             <span class="node-label">AI Agent</span>
           </button>
