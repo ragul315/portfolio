@@ -187,11 +187,11 @@
   }
 
   function renderWriting() {
-    $("#writing-list").innerHTML = data.writing
+    $("#writing-list").innerHTML = data.writing.posts
       .map(
         (w) => `
         <a class="card hover-card post reveal" href="${esc(w.url)}" target="_blank" rel="noopener" aria-label="${esc(w.title)} (opens LinkedIn)">
-          <div><h3>${esc(w.title)}</h3><p>${esc(w.blurb)}</p></div>
+          <div><span class="post-kind mono">${esc(w.kind)}</span><h3>${esc(w.title)}</h3><p>${rich(w.blurb)}</p></div>
           <span class="post-arrow">${arrowIcon}</span>
         </a>`
       )
