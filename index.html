@@ -1,297 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for character encoding and responsive viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ragul J - Portfolio</title>
-    <!-- Link to stylesheets and script -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="loading.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ragul Jayaraj | GenAI Backend Engineer</title>
+  <meta name="description" content="Ragul Jayaraj is a GenAI backend engineer at UST building scalable AI agents and backend systems with FastAPI, Temporal, Redis and SQLAlchemy.">
+  <meta name="author" content="Ragul Jayaraj">
+  <meta name="theme-color" content="#030712">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://ragul315.github.io/portfolio/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Ragul Jayaraj | GenAI Backend Engineer">
+  <meta property="og:description" content="Building scalable AI agents and backend systems. FastAPI, Temporal, Redis, SQLAlchemy.">
+  <meta property="og:url" content="https://ragul315.github.io/portfolio/">
+  <meta property="og:image" content="https://ragul315.github.io/portfolio/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ragul Jayaraj",
+    "jobTitle": "GenAI Backend Engineer",
+    "worksFor": { "@type": "Organization", "name": "UST" },
+    "alumniOf": "Dr. Mahalingam College of Engineering and Technology",
+    "url": "https://ragul315.github.io/portfolio/",
+    "sameAs": ["https://www.linkedin.com/in/ragul315", "https://github.com/ragul315"]
+  }
+  </script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-    <!-- Loading animation -->
-    <div class="loading-container">
-        <div class="loading-spinner"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Ragul Jayaraj, home">Ragul Jayaraj</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="ghost-btn search-btn" type="button" data-open-palette aria-label="Search the site">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <a class="btn btn-primary btn-sm nav-cta" href="#contact">Get in touch</a>
+        <button class="ghost-btn menu-btn" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="eyebrow-dot"></span>Software Engineer at UST · Tamil Nadu, India</p>
+        <h1>GenAI Backend<br>Engineer</h1>
+        <p class="hero-sub">Building scalable AI agents &amp; backend systems</p>
+        <p class="hero-stack mono">FastAPI | Temporal | Redis | SQLAlchemy</p>
+        <p class="hero-lede">
+          I'm Ragul Jayaraj. At UST I work on agent orchestration, PII masking before data reaches a model,
+          and services that keep running when the systems around them fail.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener">LinkedIn profile</a>
+        </div>
+        <ul class="social" aria-label="Profiles">
+          <li><a href="https://github.com/ragul315" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a></li>
+          <li><a href="mailto:j.ragul315@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="hero-photo">
+        <picture>
+          <source srcset="assets/img/profile.webp" type="image/webp">
+          <img src="assets/img/profile.jpg" alt="Ragul Jayaraj" width="640" height="640" fetchpriority="high">
+        </picture>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <p class="label mono">About</p>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <h2>I like knowing why a system works, not just that it does.</h2>
+          <p>
+            I'm a software engineer at UST, working on the backend side of generative AI. Most of my days go into
+            task-oriented AI agents running on Temporal, guardrails that mask personal data with Microsoft Presidio
+            before anything reaches a model, and Pydantic validation so model output is safe to use downstream.
+          </p>
+          <p>
+            I spend a lot of time on the failure cases: retries that don't turn into retry storms, circuit breakers,
+            and caching that takes pressure off the database. Outside work I'm digging into RAG and the Model Context
+            Protocol, and I post short explainers about what I learn on LinkedIn.
+          </p>
+        </div>
+        <dl class="card facts reveal">
+          <div><dt>Role</dt><dd>Software Engineer, UST</dd></div>
+          <div><dt>Works on</dt><dd>AI agents, LLM pipelines, backend reliability</dd></div>
+          <div><dt>Main stack</dt><dd>Python, FastAPI, Temporal, SQLAlchemy, Redis</dd></div>
+          <div><dt>Studied</dt><dd>B.E. Computer Science, Dr. Mahalingam College</dd></div>
+          <div><dt>Based in</dt><dd>Tamil Nadu, India</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section container" id="architecture">
+      <p class="label mono">Architecture</p>
+      <h2 class="section-title">How the systems I build fit together</h2>
+      <p class="section-sub">A typical agent backend I work on. Select a component to see its role.</p>
+
+      <div class="arch-scroll reveal">
+        <div class="arch" id="arch">
+          <svg class="arch-lines" viewBox="0 0 740 340" aria-hidden="true">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10z" fill="context-stroke"/>
+              </marker>
+            </defs>
+            <path class="edge" style="--c:#60a5fa" d="M68 170H122" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#22d3ee" d="M178 170H232" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#fbbf24" d="M288 170H354" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#c084fc" d="M414 154Q440 60 512 60" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#f472b6" d="M426 170H512" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#f87171" d="M414 186Q440 280 512 280" marker-end="url(#arrow)"/>
+            <path class="edge" style="--c:#4ade80" d="M568 280H652" marker-end="url(#arrow)"/>
+          </svg>
+
+          <button class="node" style="--x:40;--y:170;--c:#60a5fa" type="button" data-detail="Requests come in from a client app or another service.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            <span class="node-label">User</span>
+          </button>
+          <button class="node" style="--x:150;--y:170;--c:#22d3ee" type="button" data-detail="Typed FastAPI endpoints. Pydantic models reject bad input at the edge.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <span class="node-label">FastAPI</span>
+          </button>
+          <button class="node" style="--x:260;--y:170;--c:#fbbf24" type="button" data-detail="Personal data is detected and masked with Microsoft Presidio before any text is sent to a model.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <span class="node-label">PII guardrails</span>
+          </button>
+          <button class="node hub" style="--x:390;--y:170;--c:#818cf8" type="button" data-detail="Temporal orchestrates long-running agent work with custom retry policies, so a failure resumes instead of starting over.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+            <span class="node-label">Temporal</span>
+          </button>
+          <button class="node" style="--x:540;--y:60;--c:#c084fc" type="button" data-detail="Task-oriented AI agents. LLM output is parsed into strict Pydantic schemas before anything acts on it.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg></span>
+            <span class="node-label">AI Agent</span>
+          </button>
+          <button class="node" style="--x:540;--y:170;--c:#f472b6" type="button" data-detail="Agents discover and call external tools through MCP servers. Circuit breakers stop one failing dependency from cascading.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg></span>
+            <span class="node-label">Tools (MCP)</span>
+          </button>
+          <button class="node" style="--x:540;--y:280;--c:#f87171" type="button" data-detail="Redis caches high-frequency reads to take load off the database.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span>
+            <span class="node-label">Redis</span>
+          </button>
+          <button class="node" style="--x:680;--y:280;--c:#4ade80" type="button" data-detail="SQLAlchemy ORM over PostgreSQL and MSSQL, refactored from hardcoded SQL to remove vendor lock-in.">
+            <span class="node-box"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
+            <span class="node-label">Database</span>
+          </button>
+        </div>
+      </div>
+      <p class="arch-hint mono">Scroll sideways to see the full diagram →</p>
+      <p class="card arch-detail reveal" id="arch-detail" aria-live="polite">Select a component above to see what it does.</p>
+    </section>
+
+    <section class="section container" id="experience">
+      <p class="label mono">Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="section container" id="projects">
+      <p class="label mono">Projects</p>
+      <h2 class="section-title">Selected work</h2>
+      <div class="filters" role="group" aria-label="Filter projects" id="project-filters"></div>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section class="section container" id="skills">
+      <p class="label mono">Skills</p>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
+    <section class="section container" id="writing">
+      <p class="label mono">Writing</p>
+      <h2 class="section-title">Technical posts</h2>
+      <p class="section-sub">Short explainers I've published on LinkedIn.</p>
+      <div class="writing-list" id="writing-list"></div>
+    </section>
+
+    <section class="section container" id="education">
+      <p class="label mono">Background</p>
+      <h2 class="section-title">Education and certifications</h2>
+      <div class="background-grid">
+        <div class="card panel reveal">
+          <h3 class="panel-title mono">Education</h3>
+          <div id="education-list"></div>
+          <h3 class="panel-title mono spaced">Leadership</h3>
+          <div class="lead-list" id="leadership-list"></div>
+        </div>
+        <div class="card panel reveal">
+          <h3 class="panel-title mono">Certifications</h3>
+          <ul class="cert-list" id="cert-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="contact">
+      <div class="card contact-card reveal">
+        <p class="label mono">Contact</p>
+        <h2>Have a role or a project in mind?</h2>
+        <p>Email is the quickest way to reach me. I usually reply within a day or two.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:j.ragul315@gmail.com">j.ragul315@gmail.com</a>
+          <button class="btn btn-outline" type="button" id="copy-email">Copy email</button>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/ragul315" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ragul Jayaraj</p>
+      <a href="#top">Back to top ↑</a>
     </div>
+  </footer>
 
-    <!-- Desktop navigation -->
-    <nav id="desktop-nav">
-        <div class="logo">Ragul J</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#activities">Activities</a></li>
-            </ul>
-        </div>
-    </nav>
+  <div class="palette" id="palette" hidden>
+    <div class="palette-backdrop" data-close-palette></div>
+    <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <input class="palette-input" id="palette-input" type="text" placeholder="Search sections and links" autocomplete="off" aria-label="Search" aria-controls="palette-list">
+      <ul class="palette-list" id="palette-list" role="listbox"></ul>
+      <p class="palette-hint mono">↑ ↓ to move · Enter to open · Esc to close</p>
+    </div>
+  </div>
 
-    <!-- Hamburger navigation for mobile -->
-    <nav id="hamburger-nav">
-        <div class="logo">Ragul J</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#education" onclick="toggleMenu()">Education</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
-                <li><a href="#activities" onclick="toggleMenu()">Activities</a></li>
-            </div>
-        </div>
-    </nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <!-- Profile section -->
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./media/profile-pic.png" alt="Ragul J profile picture" />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title" style="color: white;">Ragul J</h1>
-            <p class="section__text__p2">Computer Science Engineer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./media/Ragul_J_Resume.pdf')">
-                    Download CV
-                </button>
-                <button class="btn btn-color-1" onclick="location.href='#footer'">
-                    Contact Info
-                </button>
-            </div>
-            <div id="socials-container">
-                <img
-                    src="./media/linkedin.png"
-                    alt="My LinkedIn profile"
-                    class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/ragul315'"
-                />
-                <img
-                    src="./media/github.png"
-                    alt="My Github profile"
-                    class="icon"
-                    onclick="location.href='https://github.com/ragul315'"
-                />
-            </div>
-        </div>
-    </section>
-
-    <!-- About section -->
-    <section id="about">
-        <h1 class="title">About Me</h1>
-        <div class="about-content">
-            <div class="summary glass-card animate-fade-in">
-                <h2>Summary</h2>
-                <p>Computer Science Engineer with a strong foundation in full-stack development and backend integration. Passionate about Machine Learning and actively exploring the field. Former Joint Secretary of DigiFlash, the CSE department club, with proven leadership and event organization experience.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills section -->
-    <section id="skills">
-        <h1 class="title">Skills</h1>
-        <div class="card-wrapper">
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.1s;">
-                <h3>Programming Languages</h3>
-                <p>Java, Python, JavaScript, C</p>
-            </div>
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.2s;">
-                <h3>Web Development</h3>
-                <p>HTML, CSS, React.js, Node.js, Express.js</p>
-            </div>
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.3s;">
-                <h3>Backend & Frameworks</h3>
-                <p>Spring Boot, REST APIs</p>
-            </div>
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.4s;">
-                <h3>Tools & Platforms</h3>
-                <p>Linux, Git, VS Code, Postman, Firebase</p>
-            </div>
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.5s;">
-                <h3>Databases</h3>
-                <p>MySQL, MongoDB</p>
-            </div>
-            <div class="card glass-card animate-slide-up" style="animation-delay: 0.6s;">
-                <h3>Soft Skills</h3>
-                <p>Leadership, Adaptability, Quick Learning</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience section -->
-    <section id="experience">
-        <h1 class="title">Experience</h1>
-        <div class="experience-cont">
-            <div class="experience-container glass-card animate-fade-in">
-                <img src="./media/onwords-logo.jpg" alt="Onwords Logo" class="complogo" />
-                <h2>Embedded Software Developer</h2>
-                <p>Onwords, Pollachi | Jun 2023 - Jul 2023</p>
-                <p>Worked in R&D, programming microcontrollers, MQTT.</p>
-            </div>
-            <div class="experience-container glass-card animate-fade-in">
-                <img src="./media/twilearn-logo.jpg" alt="TwiLearn Logo" class="complogo" />
-                <h2>Web Developer</h2>
-                <p>TwiLearn, Virtual Mode | Mar 2023 - Apr 2023</p>
-                <p>Utilized HTML, CSS, JS, Firebase for web development.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education section -->
-    <section id="education">
-        <h1 class="title">Education</h1>
-        <div class="education-cont">
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.1s;">
-                <h2>B.E. Computer Science and Engineering</h2>
-                <p>Dr. Mahalingam College of Engineering and Technology, Pollachi | Nov 2021 - Jun 2025</p>
-                <p>GPA: 8</p>
-            </div>
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.2s;">
-                <h2>Higher Secondary School (HSC) - PCM - CS (CBSE)</h2>
-                <p>Akshaya Academy, Oddanchatram | 2019 – 2021</p>
-                <p>Score: 68%</p>
-            </div>
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.3s;">
-                <h2>High School Leaving (HSLC) - (CBSE)</h2>
-                <p>Akshaya Public School, Palani | 2007 – 2019</p>
-                <p>Score: 64%</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects section -->
-    <section id="projects">
-        <h1 class="title">Projects</h1>
-        <div class="project-container">
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.1s;">
-                <div class="project-details">
-                    <h2>Tamil Text-to-Speech System</h2>
-                    <p>Dec 2024 – Apr 2025 | Experimented with deep learning Tacotron model to convert Tamil text to speech.</p>
-                    <a href="" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <div class="project-details">
-                    <h2>Voice Assistant</h2>
-                    <p>Jan 2024 - Feb 2024 | Developed a voice-controlled assistant using NLTK, PyAutoGUI, TensorFlow, and Gtts.</p>
-                    <a href="https://github.com/ragul315/voice-assistant" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.3s;">
-                <div class="project-details">
-                    <h2>Invoice Generator</h2>
-                    <p>Aug 2023 - Oct 2023 | Created a Python application with MySQL and Tkinter for invoice generation.</p>
-                    <a href="https://github.com/ragul315/invoice-generator" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.4s;">
-                <div class="project-details">
-                    <h2>Exam Registration System</h2>
-                    <p>Jan 2024 | Developed a Java application with MySQL and JDBC for exam registrations.</p>
-                    <a href="" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.5s;">
-                <div class="project-details">
-                    <h2>Water Tank Automation</h2>
-                    <p>Jun 2023 - Jul 2023 | Designed an automation system using ESP32, MQTT, and Arduino.</p>
-                    <a href="https://github.com/ragul315/Water-Tank-Automation-PressureSensor" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.6s;">
-                <div class="project-details">
-                    <h2>Automatic Fan Speed Controller</h2>
-                    <p>Jan 2023 | Created a system using ESP8266 and Firebase for temperature-based control.</p>
-                    <a href="https://github.com/ragul315/fan-controller" class="btn">GitHub</a>
-                </div>
-            </div>
-            <div class="project glass-card animate-fade-in" style="animation-delay: 0.7s;">
-                <div class="project-details">
-                    <h2>Hall Booking and Automation System</h2>
-                    <p>Feb 2023 - Mar 2023 | Developed a system using ESP8266, Arduino, and Firebase.</p>
-                    <a href="https://github.com/ragul315/hall-automation" class="btn">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications section -->
-    <section id="certifications">
-        <h1 class="title">Certifications</h1>
-        <div class="certifications-cont">
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.1s;">
-                <h2>The Joy of Computing Using Python (NPTEL)</h2>
-                <p>2023 | Score: 79</p>
-            </div>
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.2s;">
-                <h2>Python (Basic) (HackerRank)</h2>
-                <p>2023 | Credential ID: 2dcce4504a6c</p>
-            </div>
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.3s;">
-                <h2>Introduction to Programming in C (NPTEL)</h2>
-                <p>2022 | Score: 82</p>
-            </div>
-            <div class="details-container glass-card animate-slide-up" style="animation-delay: 0.4s;">
-                <h2>Database and SQL – Infosys Springboard</h2>
-                <p>Jun 2024</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activities section -->
-    <section id="activities">
-        <h1 class="title">Activities</h1>
-        <div class="activities-cont">
-            <div class="details-container glass-card animate-fade-in">
-                <h2>Co-Curricular Activities</h2>
-                <div class="activity-list">
-                    <p>Workshop: Football Analytics Using Python (Mad About Sports, 2021)</p>
-                    <p>Workshop: Generative AI (MCET, Dec 2023)</p>
-                    <p>Course: Leadership and Management (Great Learning)</p>
-                </div>
-            </div>
-            <div class="details-container glass-card animate-fade-in">
-                <h2>Extra-Curricular Activities</h2>
-                <div class="activity-list">
-                    <p>Football Tournament (Sahodaya)</p>
-                    <p>Skating (School Level)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer with contact information -->
-    <footer id="footer">
-        <h1 class="title" style="color: white;">Contact</h1>
-        <div class="contact-info-upper-container glass-card animate-slide-up">
-            <div class="contact-info-container">
-                <img src="./media/002-email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:j.ragul315@gmail.com">j.ragul315@gmail.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./media/004-whatsapp.png" alt="Phone icon" class="icon contact-icon" />
-                <p><a href="https://wa.me/9600765169">9600765169</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./media/001-linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a href="https://www.linkedin.com/in/ragul315">LinkedIn</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./media/003-github.png" alt="Github icon" class="icon contact-icon" />
-                <p><a href="https://github.com/ragul315">Github</a></p>
-            </div>
-        </div>
-    </footer>
+  <noscript>
+    <p class="noscript container">Parts of this page need JavaScript. You can also find me on
+      <a href="https://www.linkedin.com/in/ragul315">LinkedIn</a> and <a href="https://github.com/ragul315">GitHub</a>.</p>
+  </noscript>
 </body>
 </html>
