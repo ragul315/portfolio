@@ -25,6 +25,7 @@ Most updates only touch `assets/js/data.js`:
 - **New job** → add an object to the top of `experience` (the first entry is marked as current).
 - **New project** → add to `projects`. `category` must match an id in `projectFilters`; set `featured: true` for a full-width card.
 - **New skill / cert / post** → append to `skills`, `certifications` or `writing`.
+- **Inline tech terms** → wrap a tool name in backticks inside experience or project text (e.g. ``Built it on `Temporal` ``) and it renders in Geist Mono as inline code.
 
 The hero text, About paragraphs and the pipeline diagram are written directly in `index.html`.
 

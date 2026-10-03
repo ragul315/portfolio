@@ -26,6 +26,7 @@ h1, h2, h3, h4 { margin: 0; color: var(--text); font-weight: 600; line-height: 1
 p { margin: 0 0 1rem; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 .mono { font-family: var(--mono); }
+code { font: 500 .88em var(--mono); color: var(--text); background: rgba(99, 102, 241, .12); border: 1px solid rgba(99, 102, 241, .2); padding: .05em .38em; border-radius: 5px; white-space: nowrap; }
 :focus-visible { outline: 2px solid var(--indigo-hi); outline-offset: 3px; border-radius: 6px; }
 svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 svg.fill { fill: currentColor; stroke: none; }

@@ -8,6 +8,8 @@
 
   const esc = (s) =>
     String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // `backticks` in data.js text render as inline code
+  const rich = (s) => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
   const tags = (items) => `<ul class="tags">${items.map((t) => `<li class="tag">${esc(t)}</li>`).join("")}</ul>`;
   const initials = (name) => {
     const words = name.split(/\s+/);
@@ -34,7 +36,7 @@
                 <p class="tl-meta">${esc(job.period)} · ${esc(job.location)}<span class="pill">${esc(job.type)}</span></p>
               </div>
             </div>
-            <ul class="tl-list">${job.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
+            <ul class="tl-list">${job.highlights.map((h) => `<li>${rich(h)}</li>`).join("")}</ul>
             ${tags(job.tags)}
           </article>
         </li>`;
@@ -44,7 +46,7 @@
 
   function projectCard(p) {
     const highlights = p.highlights.length
-      ? `<ul class="project-highlights">${p.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>`
+      ? `<ul class="project-highlights">${p.highlights.map((h) => `<li>${rich(h)}</li>`).join("")}</ul>`
       : "";
     const link = p.repo
       ? `<a class="project-link" href="${esc(p.repo)}" target="_blank" rel="noopener">${githubIcon} View source</a>`
@@ -55,7 +57,7 @@
         <div class="project-top"><h3>${esc(p.name)}</h3>${note}</div>
         <p class="project-period">${esc(p.period)}</p>
         <div class="project-body">
-          <p class="project-summary">${esc(p.summary)}</p>
+          <p class="project-summary">${rich(p.summary)}</p>
           ${highlights}
         </div>
         <div class="project-foot">${tags(p.tech)}${link}</div>
