@@ -46,16 +46,6 @@ window.PORTFOLIO = {
       ],
       tags: ["Embedded C", "ESP32", "MQTT", "IoT"],
     },
-    {
-      company: "TwiLearn",
-      title: "Web Developer",
-      type: "Internship",
-      period: "Mar 2023 – Apr 2023",
-      location: "Remote",
-      logo: "assets/img/twilearn.webp",
-      highlights: ["Built web features with HTML, CSS, JavaScript and Firebase."],
-      tags: ["JavaScript", "Firebase"],
-    },
   ],
 
   // category values drive the project filter chips
