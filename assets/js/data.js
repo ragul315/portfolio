@@ -19,7 +19,7 @@ window.PORTFOLIO = {
       type: "Full-time",
       period: "Dec 2025 – Present",
       location: "Trivandrum, Kerala · On-site",
-      logo: null,
+      logo: "assets/img/ust.webp",
       highlights: [
         "Built responsible-AI (AI governance) guardrails for LLM pipelines: real-time PII protection with Microsoft `Presidio`, and a content-moderation layer designed with the Factory pattern so new content-safety providers plug in without changing callers. It currently runs on `Azure AI Content Safety`.",
         "Engineered distributed workflow orchestration on `Temporal` with customized retry mechanisms, giving fault-tolerant, deterministic execution for async backend processes and AI agents.",
