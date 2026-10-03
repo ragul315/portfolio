@@ -7,10 +7,10 @@ Plain HTML, CSS and JavaScript — no framework, no build step. GitHub Pages ser
 ## Structure
 
 ```
-index.html            page layout and static sections (hero, about, architecture diagram, contact)
+index.html            page layout only, plus <head> tags (title, description, link preview)
 404.html              GitHub Pages "not found" page (uses absolute /portfolio/ paths on purpose)
 assets/
-  js/data.js          ALL list content: experience, projects, skills, writing, education, certifications
+  js/data.js          ALL content: profile/hero, about, architecture diagram, experience, projects, skills, posts, education, contact
   js/main.js          rendering + interactions (diagram, filters, search, animations)
   css/style.css       styles; colors and fonts are CSS variables at the top
   img/                profile photo, company logos, favicon, social preview image
@@ -20,14 +20,18 @@ robots.txt, sitemap.xml
 
 ## Updating content
 
-Most updates only touch `assets/js/data.js`:
+Everything you'd want to change lives in `assets/js/data.js`:
 
-- **New job** → add an object to the top of `experience` (the first entry is marked as current).
+- **Name, headline, tagline, stack line, intro, email, links** → `profile`. The skills orbiting your photo are `profile.orbit`.
+- **About section** → `about` (heading, paragraphs, and the facts card).
+- **Architecture diagram** → `architecture`. Each node has an `x`/`y` on a 1000×390 canvas, a color, an icon name and a description; `edges` lists connections as `[from, to]` node ids. Arrows and the Governance box are drawn from these, so moving a node only means changing its coordinates.
+- **New job** → add to the top of `experience` (the first entry is marked as current).
 - **New project** → add to `projects`. `category` must match an id in `projectFilters`; set `featured: true` for a full-width card.
 - **New skill / cert / post** → append to `skills`, `certifications` or `writing`.
-- **Inline tech terms** → wrap a tool name in backticks inside experience or project text (e.g. ``Built it on `Temporal` ``) and it renders in Geist Mono as inline code.
+- **Inline tech terms** → wrap a tool name in backticks in any text (e.g. ``on `Temporal` ``) and it renders in Geist Mono.
+- **Contact section text** → `contact`.
 
-The hero text, About paragraphs and the pipeline diagram are written directly in `index.html`.
+Not in data.js: the `<head>` tags in `index.html` (page title, description, LinkedIn/OG preview image), because link previews read them without running JavaScript. Update those by hand if your headline changes.
 
 ## Run locally
 

@@ -150,7 +150,7 @@ main { overflow-x: clip; }
 
 /* Architecture diagram (matches the LinkedIn banner) */
 .arch-scroll { overflow-x: auto; padding: 8px 0 4px; -webkit-overflow-scrolling: touch; }
-.arch { position: relative; width: 100%; max-width: 1080px; min-width: 860px; margin-inline: auto; aspect-ratio: 1000 / 390; }
+.arch { position: relative; width: 100%; max-width: 1080px; min-width: 860px; margin-inline: auto; aspect-ratio: var(--vw) / var(--vh); }
 .arch-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .edge { fill: none; stroke: var(--c); stroke-width: 2; stroke-opacity: .55; stroke-dasharray: 5 6; animation: flow 1.4s linear infinite; }
 @keyframes flow { to { stroke-dashoffset: -11; } }
@@ -158,7 +158,7 @@ main { overflow-x: clip; }
 .lane-label, .edge-label { font: 500 10.5px var(--mono); fill: var(--dim); stroke: none; letter-spacing: .04em; }
 .lane-label { text-transform: uppercase; letter-spacing: .1em; fill: #818cf8; }
 .node {
-  position: absolute; left: calc(var(--x) / 1000 * 100%); top: calc(var(--y) / 390 * 100%); transform: translate(-50%, -26px);
+  position: absolute; left: calc(var(--x) / var(--vw) * 100%); top: calc(var(--y) / var(--vh) * 100%); transform: translate(-50%, -26px);
   display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0; cursor: pointer;
   font: inherit; color: inherit; background: none; border: 0;
 }

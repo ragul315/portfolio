@@ -50,7 +50,7 @@
 
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="#top" aria-label="Ragul Jayaraj, home">Ragul Jayaraj</a>
+      <a class="brand" href="#top" data-bind="profile.name"></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#architecture">Architecture</a></li>
@@ -75,38 +75,32 @@
   <main id="main">
     <section class="hero container" id="top">
       <div class="hero-text">
-        <p class="eyebrow"><span class="eyebrow-dot"></span>Software Engineer at UST · Tamil Nadu, India</p>
-        <h1>GenAI Backend<br>Engineer</h1>
-        <p class="hero-sub">Building scalable AI agents &amp; backend systems</p>
-        <p class="hero-stack mono">FastAPI | Temporal | Redis | SQLAlchemy</p>
-        <p class="hero-lede">
-          I'm Ragul Jayaraj. At UST I work on agent orchestration, responsible-AI guardrails that keep personal data
-          and harmful content away from models, and services that keep running when the systems around them fail.
-        </p>
+        <p class="eyebrow"><span class="eyebrow-dot"></span><span data-bind="profile.status"></span></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-sub" data-bind="profile.tagline"></p>
+        <p class="hero-stack mono" id="hero-stack"></p>
+        <p class="hero-lede" id="hero-intro"></p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener">LinkedIn profile</a>
+          <a class="btn btn-outline" data-link="linkedin" target="_blank" rel="noopener">LinkedIn profile</a>
         </div>
         <ul class="social" aria-label="Profiles">
-          <li><a href="https://github.com/ragul315" target="_blank" rel="noopener" aria-label="GitHub">
+          <li><a data-link="github" target="_blank" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
           </a></li>
-          <li><a href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <li><a data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
           </a></li>
-          <li><a href="mailto:j.ragul315@gmail.com" aria-label="Email">
+          <li><a data-link="email" aria-label="Email">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           </a></li>
         </ul>
       </div>
 
-      <div class="hero-photo">
-        <div class="ring ring-1" aria-hidden="true"><span class="orbit-chip" style="--c:#22d3ee"><span>FastAPI</span></span></div>
-        <div class="ring ring-2" aria-hidden="true"><span class="orbit-chip" style="--c:#818cf8"><span>Temporal</span></span></div>
-        <div class="ring ring-3" aria-hidden="true"><span class="orbit-chip" style="--c:#f472b6"><span>MCP</span></span></div>
+      <div class="hero-photo" id="hero-photo">
         <picture>
           <source srcset="assets/img/profile.webp" type="image/webp">
-          <img src="assets/img/profile.jpg" alt="Ragul Jayaraj" width="640" height="640" fetchpriority="high">
+          <img src="assets/img/profile.jpg" alt="" width="640" height="640" fetchpriority="high">
         </picture>
       </div>
     </section>
@@ -114,102 +108,17 @@
     <section class="section container" id="about">
       <p class="label mono">About</p>
       <div class="about-grid">
-        <div class="about-copy reveal">
-          <h2>I like knowing why a system works, not just that it does.</h2>
-          <p>
-            I'm a software engineer at UST, working on the backend side of generative AI. A big part of my work is
-            responsible AI: PII protection with Microsoft <code>Presidio</code>, and a content-moderation layer built so different
-            content-safety providers can be swapped in (it runs on <code>Azure AI Content Safety</code> today). I also build
-            task-oriented AI agents orchestrated with <code>Temporal</code>.
-          </p>
-          <p>
-            I spend a lot of time on the failure cases: retries that don't turn into retry storms, circuit breakers,
-            and caching that takes pressure off the database. Outside work I'm digging deeper into RAG and the Model
-            Context Protocol, and I post short explainers about what I learn on LinkedIn.
-          </p>
-        </div>
-        <dl class="card facts reveal">
-          <div><dt>Role</dt><dd>Software Engineer, UST</dd></div>
-          <div><dt>Works on</dt><dd>Responsible AI, AI agents, backend reliability</dd></div>
-          <div><dt>Main stack</dt><dd>Python, FastAPI, Temporal, SQLAlchemy, Redis</dd></div>
-          <div><dt>Studied</dt><dd>B.E. Computer Science, Dr. Mahalingam College</dd></div>
-          <div><dt>Based in</dt><dd>Tamil Nadu, India</dd></div>
-        </dl>
+        <div class="about-copy reveal" id="about-copy"></div>
+        <dl class="card facts reveal" id="about-facts"></dl>
       </div>
     </section>
 
     <section class="section container" id="architecture">
       <p class="label mono">Architecture</p>
       <h2 class="section-title">How the systems I build fit together</h2>
-      <p class="section-sub">A typical agent backend I work on. Select a component to see its role.</p>
-
+      <p class="section-sub" data-bind="architecture.subtitle"></p>
       <div class="arch-scroll reveal">
-        <div class="arch" id="arch">
-          <svg class="arch-lines" viewBox="0 0 1000 390" aria-hidden="true">
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
-                <path d="M0 0 10 5 0 10z" fill="context-stroke"/>
-              </marker>
-            </defs>
-            <rect class="lane" x="228" y="148" width="194" height="118" rx="14"/>
-            <text class="lane-label" x="240" y="140">Governance</text>
-            <path class="edge" style="--c:#c084fc" d="M670 70H760" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#e879f9" d="M820 70H890" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#60a5fa" d="M80 200H130" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#22d3ee" d="M190 200H240" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#fbbf24" d="M300 200H350" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#fb923c" d="M410 200H462" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#818cf8" d="M518 168Q540 96 612 88" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#818cf8" d="M538 200H610" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#818cf8" d="M518 232Q540 322 610 328" marker-end="url(#arrow)"/>
-            <path class="edge" style="--c:#f87171" d="M670 330H760" marker-end="url(#arrow)"/>
-          </svg>
-
-          <button class="node" style="--x:640;--y:70;--c:#c084fc" type="button" data-detail="Task-oriented AI agents that plan the work and decide which steps and tools to run.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg></span>
-            <span class="node-label">AI Agent</span>
-          </button>
-          <button class="node" style="--x:790;--y:70;--c:#e879f9" type="button" data-detail="The agent calls the LLM to reason over the task and generate a response.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M17 5h4"/></svg></span>
-            <span class="node-label">LLM</span>
-          </button>
-          <button class="node" style="--x:920;--y:70;--c:#38bdf8" type="button" data-detail="Model output is parsed into strict Pydantic schemas before anything downstream uses it.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <span class="node-label">Validated output</span>
-          </button>
-          <button class="node" style="--x:50;--y:200;--c:#60a5fa" type="button" data-detail="Requests come in from a client app or another service.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-            <span class="node-label">User</span>
-          </button>
-          <button class="node" style="--x:160;--y:200;--c:#22d3ee" type="button" data-detail="Typed FastAPI endpoints. Pydantic models reject bad input at the edge.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-            <span class="node-label">FastAPI</span>
-          </button>
-          <button class="node" style="--x:270;--y:200;--c:#fbbf24" type="button" data-detail="Microsoft Presidio detects and masks personal data before any text reaches a model.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <span class="node-label">PII masking</span>
-          </button>
-          <button class="node" style="--x:380;--y:200;--c:#fb923c" type="button" data-detail="Content moderation built with the Factory pattern, so any content-safety provider can plug in. It runs on Azure AI Content Safety today.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v4M12 14.5h.01"/></svg></span>
-            <span class="node-label">Content safety</span>
-          </button>
-          <button class="node hub" style="--x:500;--y:200;--c:#818cf8" type="button" data-detail="Temporal orchestrates long-running agent work with custom retry policies, so a failure resumes instead of starting over.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
-            <span class="node-label">Temporal</span>
-          </button>
-          <button class="node" style="--x:640;--y:200;--c:#f472b6" type="button" data-detail="Workflows discover and call external tools through MCP servers.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg></span>
-            <span class="node-label">Tools (MCP)</span>
-          </button>
-          <button class="node" style="--x:640;--y:330;--c:#f87171" type="button" data-detail="Redis caches system prompts and other hot reads, which cuts database cost and speeds up retrieval.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span>
-            <span class="node-label">Redis</span>
-          </button>
-          <button class="node" style="--x:790;--y:330;--c:#4ade80" type="button" data-detail="SQLAlchemy ORM that works across multiple databases, refactored from hardcoded SQL to remove MSSQL vendor lock-in.">
-            <span class="node-box"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
-            <span class="node-label">Database</span>
-          </button>
-        </div>
+        <div class="arch" id="arch"></div>
       </div>
       <p class="arch-hint mono">Scroll sideways to see the full diagram →</p>
       <p class="card arch-detail reveal" id="arch-detail" aria-live="polite">Select a component above to see what it does.</p>
@@ -261,15 +170,15 @@
     <section class="section container" id="contact">
       <div class="card contact-card reveal">
         <p class="label mono">Contact</p>
-        <h2>Have a role or a project in mind?</h2>
-        <p>Email is the quickest way to reach me. I usually reply within a day or two.</p>
+        <h2 data-bind="contact.heading"></h2>
+        <p data-bind="contact.text"></p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:j.ragul315@gmail.com">j.ragul315@gmail.com</a>
+          <a class="btn btn-primary" data-link="email" data-bind="profile.email"></a>
           <button class="btn btn-outline" type="button" id="copy-email">Copy email</button>
         </div>
         <div class="contact-links">
-          <a href="https://www.linkedin.com/in/ragul315" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/ragul315" target="_blank" rel="noopener">GitHub</a>
+          <a data-link="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+          <a data-link="github" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -277,7 +186,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Ragul Jayaraj</p>
+      <p>© <span id="year"></span> <span data-bind="profile.name"></span></p>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
@@ -294,8 +203,9 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <noscript>
-    <p class="noscript container">Parts of this page need JavaScript. You can also find me on
-      <a href="https://www.linkedin.com/in/ragul315">LinkedIn</a> and <a href="https://github.com/ragul315">GitHub</a>.</p>
+    <p class="noscript container">Ragul Jayaraj, GenAI Backend Engineer. This page needs JavaScript to show its content.
+      You can also find me on <a href="https://www.linkedin.com/in/ragul315">LinkedIn</a>,
+      <a href="https://github.com/ragul315">GitHub</a> or at j.ragul315@gmail.com.</p>
   </noscript>
 </body>
 </html>

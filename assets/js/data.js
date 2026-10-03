@@ -2,14 +2,80 @@
 window.PORTFOLIO = {
   profile: {
     name: "Ragul Jayaraj",
-    role: "GenAI Backend Engineer",
-    company: "UST",
-    location: "Tamil Nadu, India",
+    status: "Software Engineer at UST · Tamil Nadu, India",
+    headline: ["GenAI Backend", "Engineer"],
+    tagline: "Building scalable AI agents & backend systems",
+    stack: ["FastAPI", "Temporal", "Redis", "SQLAlchemy"],
+    intro:
+      "I'm Ragul Jayaraj. At UST I work on agent orchestration, responsible-AI guardrails that keep personal data and harmful content away from models, and services that keep running when the systems around them fail.",
+    // skills that orbit the profile photo (inner ring first)
+    orbit: [
+      { label: "FastAPI", color: "#22d3ee" },
+      { label: "Temporal", color: "#818cf8" },
+      { label: "MCP", color: "#f472b6" },
+    ],
     email: "j.ragul315@gmail.com",
     links: {
       github: "https://github.com/ragul315",
       linkedin: "https://www.linkedin.com/in/ragul315",
     },
+  },
+
+  about: {
+    heading: "I like knowing why a system works, not just that it does.",
+    paragraphs: [
+      "I'm a software engineer at UST, working on the backend side of generative AI. A big part of my work is responsible AI: PII protection with Microsoft `Presidio`, and a content-moderation layer built so different content-safety providers can be swapped in (it runs on `Azure AI Content Safety` today). I also build task-oriented AI agents orchestrated with `Temporal`.",
+      "I spend a lot of time on the failure cases: retries that don't turn into retry storms, circuit breakers, and caching that takes pressure off the database. Outside work I'm digging deeper into RAG and the Model Context Protocol, and I post short explainers about what I learn on LinkedIn.",
+    ],
+    facts: [
+      ["Role", "Software Engineer, UST"],
+      ["Works on", "Responsible AI, AI agents, backend reliability"],
+      ["Main stack", "Python, FastAPI, Temporal, SQLAlchemy, Redis"],
+      ["Studied", "B.E. Computer Science, Dr. Mahalingam College"],
+      ["Based in", "Tamil Nadu, India"],
+    ],
+  },
+
+  architecture: {
+    subtitle: "A typical agent backend I work on. Select a component to see its role.",
+    width: 1000,
+    height: 390,
+    groups: [{ label: "Governance", nodes: ["pii", "safety"] }],
+    // x/y are positions on a 1000 x 390 canvas; arrows and the group box are computed from them
+    nodes: [
+      { id: "user", label: "User", icon: "user", x: 50, y: 200, color: "#60a5fa",
+        detail: "Requests come in from a client app or another service." },
+      { id: "fastapi", label: "FastAPI", icon: "zap", x: 160, y: 200, color: "#22d3ee",
+        detail: "Typed FastAPI endpoints. Pydantic models reject bad input at the edge." },
+      { id: "pii", label: "PII masking", icon: "shield", x: 270, y: 200, color: "#fbbf24",
+        detail: "Microsoft Presidio detects and masks personal data before any text reaches a model." },
+      { id: "safety", label: "Content safety", icon: "flag", x: 380, y: 200, color: "#fb923c",
+        detail: "Content moderation built with the Factory pattern, so any content-safety provider can plug in. It runs on Azure AI Content Safety today." },
+      { id: "temporal", label: "Temporal", icon: "branch", x: 500, y: 200, color: "#818cf8", hub: true,
+        detail: "Temporal orchestrates long-running agent work with custom retry policies, so a failure resumes instead of starting over." },
+      { id: "agent", label: "AI Agent", icon: "cpu", x: 640, y: 70, color: "#c084fc",
+        detail: "Task-oriented AI agents that plan the work and decide which steps and tools to run." },
+      { id: "llm", label: "LLM", icon: "sparkle", x: 790, y: 70, color: "#e879f9",
+        detail: "The agent calls the LLM to reason over the task and generate a response." },
+      { id: "output", label: "Validated output", icon: "check", x: 920, y: 70, color: "#38bdf8",
+        detail: "Model output is parsed into strict Pydantic schemas before anything downstream uses it." },
+      { id: "tools", label: "Tools (MCP)", icon: "wrench", x: 640, y: 200, color: "#f472b6",
+        detail: "Workflows discover and call external tools through MCP servers." },
+      { id: "redis", label: "Redis", icon: "grid", x: 640, y: 330, color: "#f87171",
+        detail: "Redis caches system prompts and other hot reads, which cuts database cost and speeds up retrieval." },
+      { id: "database", label: "Database", icon: "database", x: 790, y: 330, color: "#4ade80",
+        detail: "SQLAlchemy ORM that works across multiple databases, refactored from hardcoded SQL to remove MSSQL vendor lock-in." },
+    ],
+    edges: [
+      ["user", "fastapi"], ["fastapi", "pii"], ["pii", "safety"], ["safety", "temporal"],
+      ["temporal", "agent"], ["temporal", "tools"], ["temporal", "redis"],
+      ["agent", "llm"], ["llm", "output"], ["redis", "database"],
+    ],
+  },
+
+  contact: {
+    heading: "Have a role or a project in mind?",
+    text: "Email is the quickest way to reach me. I usually reply within a day or two.",
   },
 
   experience: [
@@ -146,7 +212,7 @@ window.PORTFOLIO = {
   ],
 
   skills: [
-    { group: "GenAI & Agents", items: ["AI Agents", "Model Context Protocol (MCP)", "LLM response validation", "RAG", "Gemini API"] },
+    { group: "GenAI & Agents", items: ["AI Agents", "Model Context Protocol (MCP)", "LLM response validation", "RAG", "LiteLLM"] },
     { group: "Responsible AI", items: ["AI governance", "PII protection (Presidio)", "Content moderation", "Azure AI Content Safety", "Factory pattern"] },
     { group: "Backend", items: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "REST APIs", "Temporal", "Spring Boot"] },
     { group: "Data", items: ["PostgreSQL", "MSSQL", "MongoDB", "MySQL", "Redis"] },
