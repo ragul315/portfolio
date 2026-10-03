@@ -44,13 +44,6 @@ main { overflow-x: clip; }
     linear-gradient(135deg, #030712 0%, rgba(23, 37, 84, 0.32) 55%, rgba(59, 7, 100, 0.22) 100%),
     var(--bg);
 }
-.backdrop::after {
-  content: ""; position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .35) 70%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .35) 70%, transparent 100%);
-}
 .scroll-progress { position: fixed; top: 0; left: 0; z-index: 60; height: 2px; width: 100%; background: linear-gradient(90deg, #3b82f6, #6366f1, #a855f7); transform-origin: 0 50%; transform: scaleX(0); }
 
 /* ---------- Cards (glass) ---------- */
