@@ -2,7 +2,7 @@
 window.PORTFOLIO = {
   profile: {
     name: "Ragul Jayaraj",
-    status: "Software Engineer at UST · Tamil Nadu, India",
+    status: "Software Engineer at UST · Trivandrum, Kerala",
     headline: ["GenAI Backend", "Engineer"],
     tagline: "Building scalable AI agents & backend systems",
     stack: ["FastAPI", "Temporal", "Redis", "SQLAlchemy"],
@@ -32,7 +32,7 @@ window.PORTFOLIO = {
       ["Works on", "Responsible AI, AI agents, backend reliability"],
       ["Main stack", "Python, FastAPI, Temporal, SQLAlchemy, Redis"],
       ["Studied", "B.E. Computer Science, Dr. Mahalingam College"],
-      ["Based in", "Tamil Nadu, India"],
+      ["Based in", "Trivandrum, Kerala"],
     ],
   },
 
@@ -76,7 +76,6 @@ window.PORTFOLIO = {
   contact: {
     heading: "Have a role or a project in mind?",
     text: "Email is the quickest way to reach me. I usually reply within a day or two.",
-    phone: "9600765169",
   },
 
   experience: [
@@ -88,12 +87,12 @@ window.PORTFOLIO = {
       location: "Trivandrum, Kerala · On-site",
       logo: "assets/img/ust.webp",
       highlights: [
-        "Built responsible-AI (AI governance) guardrails for LLM pipelines: real-time PII protection with Microsoft `Presidio`, and a content-moderation layer designed with the Factory pattern so new content-safety providers plug in without changing callers. It currently runs on `Azure AI Content Safety`.",
-        "Engineered distributed workflow orchestration on `Temporal` with customized retry mechanisms, giving fault-tolerant, deterministic execution for async backend processes and AI agents.",
+        "Built responsible-AI (AI governance) guardrails for LLM pipelines: real-time PII protection with Microsoft `Presidio` at 78% detection accuracy, and a content-moderation layer designed with the Factory pattern so new content-safety providers plug in without changing callers. It currently runs on `Azure AI Content Safety`.",
+        "Built `Temporal` workflows with custom retry policies for async backend processes and AI agents, cutting task execution failures by 45%.",
         "Implemented circuit breaker and retry mechanisms to improve fault tolerance, protecting workflows from downstream service failures.",
-        "Built deterministic LLM response structuring and validation layers with `Pydantic`, turning unpredictable model output into type-safe data.",
+        "Built deterministic LLM response structuring and validation layers with `Pydantic`, turning unpredictable model output into type-safe data and cutting validation errors by 80%.",
         "Refactored a legacy data layer from hardcoded SQL to a modular, multi-database `SQLAlchemy` ORM architecture, removing `MSSQL` vendor lock-in.",
-        "Implemented `Redis` caching for high-frequency reads such as system prompts, cutting database cost and speeding up prompt retrieval.",
+        "Implemented `Redis` caching for high-frequency reads such as system prompts, cutting database calls by 40% and speeding up prompt retrieval.",
         "Diagnosed and resolved high-priority production bottlenecks through debugging and performance tuning.",
       ],
       tags: ["Python", "FastAPI", "Temporal", "Pydantic", "Presidio", "Azure AI Content Safety", "SQLAlchemy", "Redis", "MCP"],
@@ -214,8 +213,8 @@ window.PORTFOLIO = {
 
   skills: [
     { group: "GenAI & Agents", items: ["AI Agents", "Model Context Protocol (MCP)", "LLM response validation", "RAG", "LiteLLM"] },
-    { group: "Responsible AI", items: ["AI governance", "PII protection (Presidio)", "Content moderation", "Azure AI Content Safety", "Factory pattern"] },
-    { group: "Backend", items: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "REST APIs", "Temporal", "Spring Boot"] },
+    { group: "Responsible AI", items: ["AI governance", "PII protection (Presidio)", "Content moderation", "Azure AI Content Safety"] },
+    { group: "Backend", items: ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "REST APIs", "Temporal"] },
     { group: "Data", items: ["PostgreSQL", "MSSQL", "MongoDB", "MySQL", "Redis"] },
     { group: "Reliability", items: ["Circuit breakers", "Retries & backoff", "Caching", "Performance tuning"] },
     { group: "Frontend", items: ["React", "TypeScript", "JavaScript", "HTML & CSS"] },
