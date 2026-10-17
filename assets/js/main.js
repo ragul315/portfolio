@@ -411,6 +411,6 @@
   initReveal();
   initArchitecture();
   initPalette();
-  $("#copy-email").addEventListener("click", copyEmail);
+  $("#copy-email")?.addEventListener("click", copyEmail); // button may be swapped out (e.g. for WhatsApp)
   $("#year").textContent = new Date().getFullYear();
 })();
