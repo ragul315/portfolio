@@ -330,7 +330,9 @@ main { overflow-x: clip; }
   .search-btn kbd { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  /* the slow skill orbit around the photo keeps turning; everything else stops */
+  :not(.ring, .ring *), ::before, ::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  *, *::before, *::after { transition-duration: .001ms !important; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; }
 }
