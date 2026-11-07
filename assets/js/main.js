@@ -89,7 +89,7 @@
       .join("");
     const nodes = arch.nodes
       .map(
-        (n) => `<button class="node${n.hub ? " hub" : ""}" style="--x:${n.x};--y:${n.y};--c:${esc(n.color)}" type="button" data-detail="${esc(n.detail)}">
+        (n, i) => `<button class="node${n.hub ? " hub" : ""}" style="--i:${i};--x:${n.x};--y:${n.y};--c:${esc(n.color)}" type="button" data-detail="${esc(n.detail)}">
           <span class="node-box"><svg viewBox="0 0 24 24">${ICONS[n.icon]}</svg></span>
           <span class="node-label">${esc(n.label)}</span>
         </button>`
@@ -272,10 +272,14 @@
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            io.unobserve(e.target);
-          }
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          const siblings = Array.from(el.parentElement.children).filter((c) => c.classList.contains("reveal"));
+          const step = Math.min(siblings.indexOf(el), 6) * 90;
+          el.style.transitionDelay = `${step}ms`;
+          el.classList.add("visible");
+          io.unobserve(el);
+          setTimeout(() => { el.style.transitionDelay = ""; }, 1000 + step);
         });
       },
       { threshold: 0.12 }

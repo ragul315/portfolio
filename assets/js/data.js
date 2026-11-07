@@ -74,8 +74,8 @@ window.PORTFOLIO = {
   },
 
   contact: {
-    heading: "Have a role or a project in mind?",
-    text: "Email is the quickest way to reach me. I usually reply within a day or two.",
+    heading: "Say hello",
+    text: "Got a question, an idea, or something you'd like to build? I'd love to hear from you. Email is the quickest way to reach me, and I usually reply within a day or two.",
   },
 
   experience: [
