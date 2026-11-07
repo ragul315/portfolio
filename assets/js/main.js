@@ -291,15 +291,41 @@
   function initArchitecture() {
     const nodes = $$(".node");
     const detail = $("#arch-detail");
-    const select = (node) => {
-      nodes.forEach((n) => n.classList.toggle("active", n === node));
+    const arch = $("#arch");
+    let current = -1;
+    let timer = null;
+    let inView = false;
+
+    const show = (i) => {
+      current = i;
+      nodes.forEach((n, j) => n.classList.toggle("active", j === i));
+      const node = nodes[i];
       detail.innerHTML = `<strong>${esc(node.querySelector(".node-label").textContent)}.</strong> ${esc(node.dataset.detail)}`;
     };
-    nodes.forEach((s) => {
-      s.addEventListener("mouseenter", () => select(s));
-      s.addEventListener("focus", () => select(s));
-      s.addEventListener("click", () => select(s));
+    const stop = () => { clearInterval(timer); timer = null; };
+    const play = () => {
+      if (reduceMotion || timer || !inView) return;
+      if (current < 0) show(0);
+      timer = setInterval(() => show((current + 1) % nodes.length), 2400);
+    };
+
+    nodes.forEach((n, i) => {
+      const pick = () => { stop(); show(i); };
+      n.addEventListener("mouseenter", pick);
+      n.addEventListener("focus", pick);
+      n.addEventListener("click", pick);
+      n.addEventListener("mouseleave", play);
+      n.addEventListener("blur", play);
     });
+
+    new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        if (inView) play();
+        else stop();
+      },
+      { threshold: 0.4 }
+    ).observe(arch);
   }
 
   /* ---------- Toast & copy ---------- */
