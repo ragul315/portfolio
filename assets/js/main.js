@@ -304,7 +304,7 @@
     };
     const stop = () => { clearInterval(timer); timer = null; };
     const play = () => {
-      if (reduceMotion || timer || !inView) return;
+      if (timer || !inView) return;
       if (current < 0) show(0);
       timer = setInterval(() => show((current + 1) % nodes.length), 2400);
     };
